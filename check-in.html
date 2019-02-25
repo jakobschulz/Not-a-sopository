@@ -10,11 +10,17 @@
 			<div class="row">
 			<div class="col s3">
 			<div class="col s9">
-				<div class="card ">
-				<div class="card-content white-text">
+				<div class="card amber lighten-1">
+				<div class="card-content black-text">
 					<span class="card-title">{{ticket.name}}</span>
-					<p>{{ticket.email}}</p>
-					<p>{{ticket.dob}}</p>
+					<p>{{ticket.email}} <br>
+					{{ticket.dob}}</p>
+					
+					%if ticket.check_in == True:
+						<p> Checked in </p>
+					%else:
+						<p> <a href ="/check-in-success/{{ticket.id}}">Not Checked In </a> </p>
+					%end
 				</div>
 				</div>
 			</div>

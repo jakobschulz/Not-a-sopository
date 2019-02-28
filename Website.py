@@ -62,6 +62,15 @@ def check_in_success(ticket_id):
 def sell_ticket():
     pass
 
+@route('/sell-ticket-success', method='POST')
+@view('sell-ticket-success')
+def sell_ticket_success():
+    name = request.forms.get('name')
+    email = request.forms.get('email')
+    date_of_birth = request.forms.get('dob')
+    
+    new_ticket = Ticket(name, email, date_of_birth, False)
+    tickets.append(new_ticket)
 
 
 run(host ='0.0.0.0', port = 8080, reloader = True, debug = True)
